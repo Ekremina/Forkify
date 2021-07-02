@@ -1,0 +1,20 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "Recipe application",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Ekremina Arik",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.35.1"
+  },
+  "dependencies": {
+    "regenerator-runtime": "^0.13.7"
+  }
+}
