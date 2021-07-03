@@ -1,10 +1,10 @@
-const { mark } = require('regenerator-runtime');
+// const { mark } = require('regsenerator-runtime');
 
 // import { func } from 'assert-plus';
 import icons from '../img/icons.svg';
 // import icons from 'url:../img/icons.svg';
 // import 'core-js/stable';
-// import 'regenerator-runtime/runtime';
+import 'regenerator-runtime/runtime';
 const recipeContainer = document.querySelector('.recipe');
 
 const timeout = function (s) {
@@ -33,10 +33,16 @@ const renderSpinner = function (parentEl) {
 
 const showRecipe = async function () {
   try {
+    const id = window.location.hash.slice(1);
+    console.log(id);
+
+    if (!id) return;
+
     //loading recipe
     renderSpinner(recipeContainer);
     const res = await fetch(
-      'https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886'
+      //setting the hash id
+      `https://forkify-api.herokuapp.com/api/v2/recipes/${id}`
     );
     const data = await res.json();
 
@@ -59,8 +65,8 @@ const showRecipe = async function () {
     const markup = `
         <figure class="recipe__fig">
         <img src="${recipe.image}" alt="${recipe.title}" class="recipe__img" />
-        <h1 class="${recipe.title}">
-          <span>Pasta with tomato cream sauce</span>
+        <h1 class="recipe_title">
+          <span>${recipe.title}</span>
         </h1>
       </figure>
 
@@ -120,7 +126,7 @@ const showRecipe = async function () {
             <div class="recipe__quantity">${ing.quantity}</div>
             <div class="recipe__description">
               <span class="recipe__unit">${ing.unit}</span>
-              ${ing.decription}
+              ${ing.description}
             </div>
           </li>
             `;
@@ -156,4 +162,7 @@ const showRecipe = async function () {
   }
 };
 
-showRecipe();
+['hashchange', 'load'].forEach(e => window.addEventListener(ev, showRecipe));
+
+// window.addEventListener('hashchange', showRecipe);
+// window.addEventListener('load', showRecipe);
