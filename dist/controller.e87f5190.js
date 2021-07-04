@@ -117,9 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"src/img/icons.svg":[function(require,module,exports) {
-module.exports = "/icons.ae3c38d5.svg";
-},{}],"node_modules/regenerator-runtime/runtime.js":[function(require,module,exports) {
+})({"node_modules/regenerator-runtime/runtime.js":[function(require,module,exports) {
 var define;
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -870,14 +868,129 @@ try {
   Function("r", "regeneratorRuntime = r")(runtime);
 }
 
+},{}],"src/js/model.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.loadRecipe = exports.state = void 0;
+
+var _regeneratorRuntime = require("regenerator-runtime");
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var state = {
+  recipe: {}
+};
+exports.state = state;
+
+var loadRecipe = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(id) {
+    var res, data, recipe;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.prev = 0;
+            _context.next = 3;
+            return fetch("https://forkify-api.herokuapp.com/api/v2/recipes/".concat(id));
+
+          case 3:
+            res = _context.sent;
+            _context.next = 6;
+            return res.json();
+
+          case 6:
+            data = _context.sent;
+
+            if (res.ok) {
+              _context.next = 9;
+              break;
+            }
+
+            throw new Error("".concat(data.message));
+
+          case 9:
+            console.log(res, data);
+            recipe = data.data.recipe;
+            state.recipe = {
+              id: recipe.id,
+              title: recipe.title,
+              publisher: recipe.publisher,
+              sourceUrl: recipe.source_url,
+              image: recipe.image_url,
+              servings: recipe.servings,
+              cookingTime: recipe.cooking_time,
+              ingredients: recipe.ingredients
+            };
+            console.log(state.recipe);
+            _context.next = 18;
+            break;
+
+          case 15:
+            _context.prev = 15;
+            _context.t0 = _context["catch"](0);
+            alert(_context.t0);
+
+          case 18:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee, null, [[0, 15]]);
+  }));
+
+  return function loadRecipe(_x) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+exports.loadRecipe = loadRecipe;
+},{"regenerator-runtime":"node_modules/regenerator-runtime/runtime.js"}],"src/js/views/recipeView.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var _parentElement = /*#__PURE__*/new WeakMap();
+
+var RecipeView = function RecipeView() {
+  _classCallCheck(this, RecipeView);
+
+  _parentElement.set(this, {
+    writable: true,
+    value: document.querySelector('.recipe')
+  });
+};
+
+var _default = new RecipeView();
+
+exports.default = _default;
+},{}],"src/img/icons.svg":[function(require,module,exports) {
+module.exports = "/icons.ae3c38d5.svg";
 },{}],"src/js/controller.js":[function(require,module,exports) {
 "use strict";
+
+var model = _interopRequireWildcard(require("./model.js"));
+
+var _recipeView = _interopRequireDefault(require("./views/recipeView.js"));
 
 var _icons = _interopRequireDefault(require("../img/icons.svg"));
 
 require("regenerator-runtime/runtime");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -904,7 +1017,7 @@ var renderSpinner = function renderSpinner(parentEl) {
 
 var showRecipe = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-    var id, res, data, recipe, markup;
+    var id, recipe, markup;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -921,41 +1034,15 @@ var showRecipe = /*#__PURE__*/function () {
             return _context.abrupt("return");
 
           case 5:
-            //loading recipe
-            renderSpinner(recipeContainer);
+            renderSpinner(recipeContainer); //loading recipe
+
             _context.next = 8;
-            return fetch( //setting the hash id
-            "https://forkify-api.herokuapp.com/api/v2/recipes/".concat(id));
+            return model.loadRecipe(id);
 
           case 8:
-            res = _context.sent;
-            _context.next = 11;
-            return res.json();
+            recipe = model.state.recipe; //rendering recipe
 
-          case 11:
-            data = _context.sent;
-
-            if (res.ok) {
-              _context.next = 14;
-              break;
-            }
-
-            throw new Error("".concat(data.message));
-
-          case 14:
-            console.log(res, data);
-            recipe = data.data.recipe;
-            recipe = {
-              id: recipe.id,
-              title: recipe.title,
-              publisher: recipe.publisher,
-              sourceUrl: recipe.source_url,
-              image: recipe.image_url,
-              servings: recipe.servings,
-              cookingTime: recipe.cooking_time,
-              ingredients: recipe.ingredients
-            };
-            console.log(recipe); //rendering recipe
+            _recipeView.default.render(model.state.recipe);
 
             markup = "\n        <figure class=\"recipe__fig\">\n        <img src=\"".concat(recipe.image, "\" alt=\"").concat(recipe.title, "\" class=\"recipe__img\" />\n        <h1 class=\"recipe_title\">\n          <span>").concat(recipe.title, "</span>\n        </h1>\n      </figure>\n\n      <div class=\"recipe__details\">\n        <div class=\"recipe__info\">\n          <svg class=\"recipe__info-icon\">\n            <use href=\"").concat(_icons.default, "#icon-clock\"></use>\n          </svg>\n          <span class=\"recipe__info-data recipe__info-data--minutes\">").concat(recipe.cookingTime, "</span>\n          <span class=\"recipe__info-text\">minutes</span>\n        </div>\n        <div class=\"recipe__info\">\n          <svg class=\"recipe__info-icon\">\n            <use href=\"").concat(_icons.default, "#icon-users\"></use>\n          </svg>\n          <span class=\"recipe__info-data recipe__info-data--people\">4</span>\n          <span class=\"recipe__info-text\">").concat(recipe.servings, "</span>\n\n          <div class=\"recipe__info-buttons\">\n            <button class=\"btn--tiny btn--increase-servings\">\n              <svg>\n                <use href=\"").concat(_icons.default, "#icon-minus-circle\"></use>\n              </svg>\n            </button>\n            <button class=\"btn--tiny btn--increase-servings\">\n              <svg>\n                <use href=\"").concat(_icons.default, "#icon-plus-circle\"></use>\n              </svg>\n            </button>\n          </div>\n        </div>\n\n        <div class=\"recipe__user-generated\">\n          <svg>\n            <use href=\"").concat(_icons.default, "#icon-user\"></use>\n          </svg>\n        </div>\n        <button class=\"btn--round\">\n          <svg class=\"\">\n            <use href=\"").concat(_icons.default, "#icon-bookmark-fill\"></use>\n          </svg>\n        </button>\n      </div>\n\n      <div class=\"recipe__ingredients\">\n        <h2 class=\"heading--2\">Recipe ingredients</h2>\n        <ul class=\"recipe__ingredient-list\">\n          ").concat(recipe.ingredients.map(function (ing) {
               return "\n            <li class=\"recipe__ingredient\">\n            <svg class=\"recipe__icon\">\n              <use href=\"".concat(_icons.default, "#icon-check\"></use>\n            </svg>\n            <div class=\"recipe__quantity\">").concat(ing.quantity, "</div>\n            <div class=\"recipe__description\">\n              <span class=\"recipe__unit\">").concat(ing.unit, "</span>\n              ").concat(ing.description, "\n            </div>\n          </li>\n            ");
@@ -963,20 +1050,20 @@ var showRecipe = /*#__PURE__*/function () {
 
             recipeContainer.innerHTML = '';
             recipeContainer.insertAdjacentHTML('afterbegin', markup);
-            _context.next = 26;
+            _context.next = 18;
             break;
 
-          case 23:
-            _context.prev = 23;
+          case 15:
+            _context.prev = 15;
             _context.t0 = _context["catch"](0);
             alert(_context.t0);
 
-          case 26:
+          case 18:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 23]]);
+    }, _callee, null, [[0, 15]]);
   }));
 
   return function showRecipe() {
@@ -984,11 +1071,11 @@ var showRecipe = /*#__PURE__*/function () {
   };
 }();
 
-['hashchange', 'load'].forEach(function (e) {
+['hashchange', 'load'].forEach(function (ev) {
   return window.addEventListener(ev, showRecipe);
 }); // window.addEventListener('hashchange', showRecipe);
 // window.addEventListener('load', showRecipe);
-},{"../img/icons.svg":"src/img/icons.svg","regenerator-runtime/runtime":"node_modules/regenerator-runtime/runtime.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./model.js":"src/js/model.js","./views/recipeView.js":"src/js/views/recipeView.js","../img/icons.svg":"src/img/icons.svg","regenerator-runtime/runtime":"node_modules/regenerator-runtime/runtime.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
