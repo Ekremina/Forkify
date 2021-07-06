@@ -1913,8 +1913,8 @@ var controlSearchResults = /*#__PURE__*/function () {
             return model.loadSearchResults(query);
 
           case 7:
-            //render results
-            _resultsView.default.render(model.getSearchResultsPage()); //Render initial pagination buttons
+            //render new results
+            _resultsView.default.render(model.getSearchResultsPage(goToPage)); //Render new  pagination buttons
 
 
             _resultsView.default.render(model.state.search);
@@ -1944,6 +1944,8 @@ var init = function init() {
   _recipeView.default.addHandlerRender(controlRecipes);
 
   _searchView.default.addHandlerSearch(controlSearchResults);
+
+  paginationView.addHandlerClick(controlPagination);
 };
 
 init();
