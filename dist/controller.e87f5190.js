@@ -874,11 +874,13 @@ try {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.TIMEOUT_SEC = exports.API_URL = void 0;
+exports.RES_PER_PAGE = exports.TIMEOUT_SEC = exports.API_URL = void 0;
 var API_URL = 'https://forkify-api.herokuapp.com/api/v2/recipes/';
 exports.API_URL = API_URL;
 var TIMEOUT_SEC = 10;
 exports.TIMEOUT_SEC = TIMEOUT_SEC;
+var RES_PER_PAGE = 10;
+exports.RES_PER_PAGE = RES_PER_PAGE;
 },{}],"src/js/helpers.js":[function(require,module,exports) {
 "use strict";
 
@@ -1002,7 +1004,7 @@ exports.sendJSON = sendJSON;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.loadSearchResults = exports.loadRecipe = exports.state = void 0;
+exports.getSearchResultsPage = exports.loadSearchResults = exports.loadRecipe = exports.state = void 0;
 
 var _regeneratorRuntime = require("regenerator-runtime");
 
@@ -1018,7 +1020,9 @@ var state = {
   recipe: {},
   search: {
     query: '',
-    results: []
+    results: [],
+    page: 1,
+    resultsPerPage: _config.RES_PER_PAGE
   }
 };
 exports.state = state;
@@ -1119,6 +1123,18 @@ var loadSearchResults = /*#__PURE__*/function () {
 }();
 
 exports.loadSearchResults = loadSearchResults;
+
+var getSearchResultsPage = function getSearchResultsPage() {
+  var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : state.search.page;
+  state.search.page = page;
+  var start = (page - 1) * state.search.resultsPerPage; //0;
+
+  var end = page * state.search.resultsPerPage; //9;
+
+  return state.search.results.slice(start, end);
+};
+
+exports.getSearchResultsPage = getSearchResultsPage;
 },{"regenerator-runtime":"node_modules/regenerator-runtime/runtime.js","./config.js":"src/js/config.js","./helpers.js":"src/js/helpers.js"}],"src/img/icons.svg":[function(require,module,exports) {
 module.exports = "/icons.ae3c38d5.svg";
 },{}],"src/js/views/View.js":[function(require,module,exports) {
@@ -1818,10 +1834,9 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-if (module.hot) {
-  module.hot.accept();
-}
-
+// if (module.hot) {
+//   module.hot.accept();
+// }
 var controlRecipes = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
     var id;
@@ -1899,22 +1914,25 @@ var controlSearchResults = /*#__PURE__*/function () {
 
           case 7:
             //render results
-            _resultsView.default.render(model.state.search.results);
+            _resultsView.default.render(model.getSearchResultsPage()); //Render initial pagination buttons
 
-            _context2.next = 13;
+
+            _resultsView.default.render(model.state.search);
+
+            _context2.next = 14;
             break;
 
-          case 10:
-            _context2.prev = 10;
+          case 11:
+            _context2.prev = 11;
             _context2.t0 = _context2["catch"](0);
             console.log(_context2.t0);
 
-          case 13:
+          case 14:
           case "end":
             return _context2.stop();
         }
       }
-    }, _callee2, null, [[0, 10]]);
+    }, _callee2, null, [[0, 11]]);
   }));
 
   return function controlSearchResults() {
