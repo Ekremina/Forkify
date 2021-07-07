@@ -1187,6 +1187,26 @@ var View = /*#__PURE__*/function () {
       this._parentElement.insertAdjacentHTML('afterbegin', markup);
     }
   }, {
+    key: "update",
+    value: function update(data) {
+      if (!data || Array.isArray(data) && data.length === 0) return this.renderError();
+      this._data = data;
+
+      var newMarkup = this._generateMarkup();
+
+      var newDom = document.createRange().createContextualFragment(newMarkup);
+      var newElements = Array.from(newDom.querySelectorAll('*'));
+      var curElements = Array.from(this._parentElement.querySelectorAll('*'));
+      newElements.forEach(function (newEl, i) {
+        var curEl = curElements[i];
+        console.log(curEl, newEl.isEqualNode(curEl));
+
+        if (newEl.isEqualNode(curEl) && newEl.firstChild.nodeValue.trim() !== '') {
+          curEl.createContent = newEl.textContent;
+        }
+      });
+    }
+  }, {
     key: "_clear",
     value: function _clear() {
       this._parentElement.innerHTML = '';
