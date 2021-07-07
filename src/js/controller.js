@@ -40,12 +40,27 @@ const controlSearchResults = async function () {
     //load search query
     await model.loadSearchResults(query);
     //render new results
-    resultsView.render(model.getSearchResultsPage(goToPage));
+    resultsView.render(model.getSearchResultsPage());
     //Render new  pagination buttons
     PaginationView.render(model.state.search);
   } catch (err) {
     console.log(err);
   }
+};
+
+const controlPagination = function (goToPage) {
+  // 1) Render NEW results
+  resultsView.render(model.getSearchResultsPage(goToPage));
+
+  // 2) Render NEW pagination buttons
+  paginationView.render(model.state.search);
+};
+
+const controlServings = function () {
+  //Update the recipe servings
+  model.updateServings(6);
+  //Update the recipe view
+  recipeView.update(model.state.recipe);
 };
 
 const init = function () {

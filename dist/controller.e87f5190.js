@@ -1004,7 +1004,7 @@ exports.sendJSON = sendJSON;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getSearchResultsPage = exports.loadSearchResults = exports.loadRecipe = exports.state = void 0;
+exports.updateServings = exports.getSearchResultsPage = exports.loadSearchResults = exports.loadRecipe = exports.state = void 0;
 
 var _regeneratorRuntime = require("regenerator-runtime");
 
@@ -1135,6 +1135,15 @@ var getSearchResultsPage = function getSearchResultsPage() {
 };
 
 exports.getSearchResultsPage = getSearchResultsPage;
+
+var updateServings = function updateServings(newServings) {
+  state.recipe.ingredients.forEach(function (ing) {
+    ing.quantity = ing.quantity * newServings / state.recipe.servings;
+  });
+  state.recipe.servings = newServings;
+};
+
+exports.updateServings = updateServings;
 },{"regenerator-runtime":"node_modules/regenerator-runtime/runtime.js","./config.js":"src/js/config.js","./helpers.js":"src/js/helpers.js"}],"src/img/icons.svg":[function(require,module,exports) {
 module.exports = "/icons.ae3c38d5.svg";
 },{}],"src/js/views/View.js":[function(require,module,exports) {
@@ -1914,7 +1923,7 @@ var controlSearchResults = /*#__PURE__*/function () {
 
           case 7:
             //render new results
-            _resultsView.default.render(model.getSearchResultsPage(goToPage)); //Render new  pagination buttons
+            _resultsView.default.render(model.getSearchResultsPage()); //Render new  pagination buttons
 
 
             _resultsView.default.render(model.state.search);
@@ -1939,6 +1948,21 @@ var controlSearchResults = /*#__PURE__*/function () {
     return _ref2.apply(this, arguments);
   };
 }();
+
+var controlPagination = function controlPagination(goToPage) {
+  // 1) Render NEW results
+  _resultsView.default.render(model.getSearchResultsPage(goToPage)); // 2) Render NEW pagination buttons
+
+
+  paginationView.render(model.state.search);
+};
+
+var controlServings = function controlServings() {
+  //Update the recipe servings
+  model.updateServings(6); //Update the recipe view
+
+  _recipeView.default.update(model.state.recipe);
+};
 
 var init = function init() {
   _recipeView.default.addHandlerRender(controlRecipes);
