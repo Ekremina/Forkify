@@ -1100,21 +1100,22 @@ var loadSearchResults = /*#__PURE__*/function () {
                 image: rec.image_url
               };
             });
-            _context2.next = 13;
+            state.search.page = 1;
+            _context2.next = 14;
             break;
 
-          case 9:
-            _context2.prev = 9;
+          case 10:
+            _context2.prev = 10;
             _context2.t0 = _context2["catch"](0);
             console.error("".concat(_context2.t0, "\uD83D\uDCA3"));
             throw _context2.t0;
 
-          case 13:
+          case 14:
           case "end":
             return _context2.stop();
         }
       }
-    }, _callee2, null, [[0, 9]]);
+    }, _callee2, null, [[0, 10]]);
   }));
 
   return function loadSearchResults(_x2) {
@@ -2043,7 +2044,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52688" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63744" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
