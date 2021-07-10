@@ -39,8 +39,7 @@
 
   <p align="center">
     An awesome Website for searching over 100.000s of recipes!
-   
-    <br />
+  
     <a href="https://forkify-v2.netlify.app/">View Demo</a>
    
    
@@ -61,11 +60,6 @@
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-       
-      </ul>
-    </li>
     
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
