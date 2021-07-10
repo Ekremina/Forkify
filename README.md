@@ -3,41 +3,15 @@
 <br />
 <p align="center">
 
-    <img src="https://forkify-v2.netlify.app/logo.09084f39.png" alt="Logo" width="240" height="240">
-  </a>
-
   <h3 align="center">Forkify</h3>
 
   <p align="center">
     An awesome Website for searching over 100.000s of recipes!
   
-    <a href="https://forkify-v2.netlify.app/">View Demo</a>
-   
-   
+    
   </p>
 </p>
 
-
-
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-    
-    <a href="#contributing">Contributing</a>
-   <a href="#license">License</a>
-  
-    <a href="#acknowledgements">Acknowledgements</a>
-  </ol>
-</details>
 
 
 
@@ -46,7 +20,7 @@
 
 (https://forkify-v2.netlify.app/)
 
-There are many food websites on the web, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a nice looking JS powered web app for searching recipes in elegant way.
+This project is a part of the Udemy course taught by Jonas. There are many food websites on the web, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a nice looking JS powered web app for searching recipes in elegant way.
 
 Here's why:
 * Your time should be focused on creating some amazing food. A food that solves a problem and brings happiness to the world
@@ -59,7 +33,7 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 
 ### Built With
 
-* [Javascript](https://www.javascript.com/)
+* [Javascript]
 * [CSS]
 * [HTML]
 
