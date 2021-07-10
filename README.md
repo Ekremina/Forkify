@@ -39,14 +39,10 @@
 
   <p align="center">
     An awesome Website for searching over 100.000s of recipes!
+   
     <br />
-    <a href="https://github.com/orhanar/Forkify"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="">View Demo</a>
-    ·
-    <a href="https://github.com/orhanar/Forkify/issues">Report Bug</a>
-    ·
+    <a href="https://forkify-v2.netlify.app/">View Demo</a>
+   
    
   </p>
 </p>
