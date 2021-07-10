@@ -4,9 +4,10 @@
 <p align="center">
 
   <h3 align="center">Forkify</h3>
+  <img src="https://forkify-v2.netlify.app/logo.09084f39.png" alt="alternatetext">
 
   <p align="center">
-    An awesome Website for searching over 100.000s of recipes!
+    An awesome Website for searching over 1,000,000 recipes!
   
     
   </p>
