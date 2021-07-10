@@ -35,19 +35,19 @@
     <img src="https://png.pngtree.com/png-vector/20191027/ourlarge/pngtree-spoon-and-fork-logo-free-logo-design-template-png-image_1885492.jpg" alt="Logo" width="240" height="240">
   </a>
 
-  <h3 align="center">Number Wizard</h3>
+  <h3 align="center">Forkify</h3>
 
   <p align="center">
-    An awesome Number Wizard game made in Unity!
+    An awesome Website for searching over 100.000s of recipes!
     <br />
-    <a href="https://github.com/orhanar/Number-Wizard"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/orhanar/Forkify"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://orhana.itch.io/number-wizard">View Demo</a>
+    <a href="">View Demo</a>
     ·
-    <a href="https://github.com/orhanar/Number-Wizard/issues">Report Bug</a>
+    <a href="https://github.com/orhanar/Forkify/issues">Report Bug</a>
     ·
-    <a href="https://github.com/orhanar/Number-Wizard/issues">Request Feature</a>
+    <a href="https://github.com/orhanar/Forkify/issues">Request Feature</a>
   </p>
 </p>
 
@@ -86,23 +86,21 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+There are many food websites on the web, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a nice looking JS powered web app for searching recipes in elegant way.
 
 Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
+* Your time should be focused on creating some amazing food. A food that solves a problem and brings happiness to the world
+* You shouldn't be doing the same tasks like going over the web to check how to make the same food
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
+
+Of course, it is hard to have recipes for everyone so new ones are constantly added!
 
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
 ### Built With
 
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
+* [Javascript](https://www.javascript.com/)
 
 
 
@@ -150,7 +148,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/orhanar/Forkify/issues) for a list of proposed features (and known issues).
 
 
 
@@ -203,16 +201,16 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/orhanar/Number-Wizard.svg?style=for-the-badge
-[contributors-url]: https://github.com//orhanar/Number-Wizard/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/orhanar/Number-Wizard.svg?style=for-the-badge
-[forks-url]: https://github.com/orhanar/Number-Wizard/network/members
-[stars-shield]: https://img.shields.io/github/stars/orhanar/Number-Wizard.svg?style=for-the-badge
-[stars-url]: https://github.com/orhanar/Number-Wizard/stargazers
-[issues-shield]: https://img.shields.io/github/issues/orhanar/Number-Wizard.svg?style=for-the-badge
-[issues-url]: https://github.com/orhanar/Number-Wizard/issues
-[license-shield]: https://img.shields.io/github/license/orhanar/Number-Wizard.svg?style=for-the-badge
-[license-url]: https://github.com/orhanar/Number-Wizard/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/orhanar/Forkify.svg?style=for-the-badge
+[contributors-url]: https://github.com//orhanar/Forkify/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/orhanar/Forkify.svg?style=for-the-badge
+[forks-url]: https://github.com/orhanar/Forkify/network/members
+[stars-shield]: https://img.shields.io/github/stars/orhanar/Forkify.svg?style=for-the-badge
+[stars-url]: https://github.com/orhanar/Forkify/stargazers
+[issues-shield]: https://img.shields.io/github/issues/orhanar/Forkify.svg?style=for-the-badge
+[issues-url]: https://github.com/orhanar/Forkify/issues
+[license-shield]: https://img.shields.io/github/license/orhanar/Forkify.svg?style=for-the-badge
+[license-url]: https://github.com/orhanar/Forkify/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/orhanarifoglu/
 [product-screenshot]: images/number%20wizard.gif
