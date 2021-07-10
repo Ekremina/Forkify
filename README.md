@@ -1,38 +1,9 @@
 
-
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-[![Codacy Badge]() 
-[![CodeFactor]()]() 
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/orhanar/Forkify">
-    <img src="https://png.pngtree.com/png-vector/20191027/ourlarge/pngtree-spoon-and-fork-logo-free-logo-design-template-png-image_1885492.jpg" alt="Logo" width="240" height="240">
+
+    <img src="https://forkify-v2.netlify.app/logo.09084f39.png" alt="Logo" width="240" height="240">
   </a>
 
   <h3 align="center">Forkify</h3>
