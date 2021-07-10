@@ -31,8 +31,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/orhanar/Number-Wizard">
-    <img src="images/number wizard.png" alt="Logo" width="240" height="240">
+  <a href="https://github.com/orhanar/Forkify">
+    <img src="https://png.pngtree.com/png-vector/20191027/ourlarge/pngtree-spoon-and-fork-logo-free-logo-design-template-png-image_1885492.jpg" alt="Logo" width="240" height="240">
   </a>
 
   <h3 align="center">Number Wizard</h3>
