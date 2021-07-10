@@ -32,10 +32,10 @@
     <li>
       <a href="#getting-started">Getting Started</a>
     
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
+    <a href="#contributing">Contributing</a>
+   <a href="#license">License</a>
   
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <a href="#acknowledgements">Acknowledgements</a>
   </ol>
 </details>
 
